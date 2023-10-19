@@ -14,7 +14,10 @@
                 <h1>Todo App</h1>
                 <input type="text" placeholder="Name" id="inp" onchange="addTask()">
             </div>
-            <div class="items">
+            <div id="list">
+
+            </div>
+            <!-- <div class="items">
                 <div class="details">
                     a
                 </div>
@@ -26,49 +29,39 @@
                         delete
                         </span>
                 </div>
-            </div>
-            <div class="items">
-                <div class="details">
-                    b
-                </div>
-                <div class="option">
-                    <span class="material-symbols-outlined">
-                        edit
-                        </span>
-                    <span class="material-symbols-outlined">
-                        delete
-                        </span>
-                </div>
-            </div>
-            <div class="items">
-                <div class="details">
-                    c
-                </div>
-                <div class="option">
-                    <span class="material-symbols-outlined">
-                        edit
-                        </span>
-                    <span class="material-symbols-outlined">
-                        delete
-                        </span>
-                </div>
-            </div>
-            <div class="items">
-                <div class="details">
-                    d
-                </div>
-                <div class="option">
-                    <span class="material-symbols-outlined">
-                        edit
-                        </span>
-                    <span class="material-symbols-outlined">
-                        delete
-                        </span>
-                </div>
-            </div>
+            </div> -->
+            <div id="list"></div>
+            
         </div>
     </div>
     <script>
+        async function listTodo()
+        {
+            let r="";
+            fetch("http://localhost:5002/api/list")
+            .then((res)=>res.json())
+            .then((data)=>{
+                data.map((dt)=>{
+                    r+=`
+                    <div class="items">
+                <div class="details">
+                    ${dt.task}
+                </div>
+                <div class="option">
+                    <span class="material-symbols-outlined">
+                        edit
+                        </span>
+                    <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                </div>
+            </div>
+                    `
+                })
+                document.getElementById("list").innerHTML=r;
+            })
+        }
+        listTodo();
         let data=document.getElementById("inp");
         function addTask()
         {
@@ -80,6 +73,7 @@
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({task})
             })
+            listTodo();
         }
     </script>
 </body>
