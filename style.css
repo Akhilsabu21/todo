@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://img.freepik.com/free-vector/halloween-background-flat-design_52683-43845.jpg?w=1060&t=st=1697617932~exp=1697618532~hmac=cbe46b84a6a9d6e23c4eb28341fcead6aec62bae88dafbd80cc429307a0af7cd);
+    background-size: contain;
+    /* background: rgb(8,67,48);
+    background: linear-gradient(90deg, rgba(8,67,48,1) 0%, rgba(17,160,80,1) 50%, rgba(6,83,63,1) 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(0,86,59); */
+    /* background: linear-gradient(90deg, rgba(0,86,59,1) 0%, rgba(46,139,87,1) 50%, rgba(0,106,78,1) 100%); */
+}
+.content{
+    width: 400px;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background-color: #28975a;
+    box-shadow: #0b4323b3 0px 4px 12px;
+    overflow: hidden; */
+}
+.head{
+    color: #fff;
+    text-align: center;
+    background-color: rgba(243, 97, 43, 0.308);
+    /* background-color: #28975a; */
+    /* background-color: #fff; */
+    width: 100%;
+    height: 120px;
+    border: 1px dashed #fff;
+    border-radius: 10px;
+    padding: 15px 16px 0 16px;
+}
+.head h1{
+    margin-bottom: 14px;
+}
+.head input{
+    width: 100%;
+    padding: 4px 0;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    height: 25px;
+    border-radius: 5px;
+    font-size: larger;
+    outline: none;
+}
+.head input::placeholder{
+    color: #fff;
+    padding: 4px 0 4px 4px;
+}
+.items{
+    border: 1px solid #fff;
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 5px;
+    background-color: rgba(243, 97, 43, 0.308);
+    /* background-color: #28975a; */
+}
